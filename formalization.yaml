@@ -1,0 +1,43 @@
+version: "v0.3"
+
+project:
+  name: "IMO 2026 Problem 2 (standalone)"
+  authors:
+    - "Axiom Math"
+    - "AxiomProver (autonomous multi-agent theorem prover)"
+  license: "MIT"
+
+sources:
+  - title: "IMO 2026 Problem 2"
+    authors: ["International Mathematical Olympiad"]
+    id: "IMO 2026 Q2"
+    type: "competition"
+
+status:
+  scope: >-
+    Formal Lean 4 statement and complete solution for Problem 2 of the
+    2026 International Mathematical Olympiad. Extracted as a standalone
+    project from the full AxiomMath/IMO2026 repository, with the main
+    theorem renamed from `main_theorem` to `imo2026_q2` to avoid name
+    collisions when evaluated alongside other problems.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+  main_results:
+    - declaration: "imo2026_q2"
+      file: "IMO2026Q2/solution.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+
+automation:
+  methods:
+    - method: "autonomous"
+      framework: "AxiomProver"
+
+alignment:
+  namespace: ""
+  statements:
+    - source: "IMO 2026 Problem 2"
+      lean: "imo2026_q2"
+      module: "IMO2026Q2.solution"
+      status: "proved"
